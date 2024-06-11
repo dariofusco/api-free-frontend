@@ -28,10 +28,10 @@ export default {
 
 <template>
     <div class="container text-center">
-            <h1>Benvenuto nel Blog</h1>
-    </div>
+        <h1>Benvenuto nel Blog</h1>
+    
     <div class="row">
-        <div class="col-6">
+        <div class="col">
             <div class="mt-5">
                 <div class="card mb-4" v-for="post in posts">
 
@@ -45,7 +45,8 @@ export default {
                             <span class="badge text-bg-primary">{{ post.category.name }}</span>
                         </div>
 
-                        <div class="d-flex gap-3">
+                        <div class="mb-3">
+                            Tags:
                             <span v-for="tag in post.tags" class="badge text-bg-secondary">{{ tag.name }}</span>
                         </div>
 
@@ -57,7 +58,8 @@ export default {
             </div>
         </div>
     </div>
-
+    <router-link :to="{ name: 'blog' }">Crea nuovo Post</router-link>
+</div>
 </template>
 
 <style scoped></style>
